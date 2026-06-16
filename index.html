@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slav Chervenpeev — Software Developer</title>
+  <meta name="description" content="Informatics student & aspiring software developer from Plovdiv, Bulgaria. C#, Java, JavaScript, and more." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Mouse Glow -->
+<div class="mouse-glow" id="mouseGlow"></div>
+
+<!-- BG Effects -->
+<canvas id="particles-canvas"></canvas>
+<div class="gradient-orb orb-1"></div>
+<div class="gradient-orb orb-2"></div>
+<div class="gradient-orb orb-3"></div>
+
+<!-- ═══ Navigation ═══ -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="nav-logo">&lt;SC/&gt;</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" class="active">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#qualities">Qualities</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#cv" class="nav-cv-btn">CV ↓</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══ Hero ═══ -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-content reveal">
+      <div class="hero-status">
+        <span class="status-dot"></span> Available for opportunities
+      </div>
+      <p class="section-label">// portfolio — 2026</p>
+      <h1 class="hero-name">
+        <span class="first">Slav</span>
+        <span class="last">Chervenpeev</span>
+      </h1>
+      <p class="hero-role">
+        <span class="role-prefix">&gt; </span>
+        <span id="typedRole"></span>
+        <span class="typing-cursor"></span>
+      </p>
+      <p class="hero-description">
+        Highly-motivated Informatics student at the University of Plovdiv. My strong suits are leadership, teamwork, and effective communication — always eager to take on new challenges in the tech industry.
+      </p>
+      <div class="hero-details">
+        <div class="detail-row">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Plovdiv, Bulgaria</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Stack</span>
+          <span class="detail-value">C# · Java · JavaScript · HTML/CSS · MySQL</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Focus</span>
+          <span class="detail-value">software engineering & team collaboration</span>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="mailto:slav.chervenpeev@abv.bg" class="hero-cta magnetic-btn">
+          <span>Connect via Email</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#cv" class="hero-cta-secondary magnetic-btn">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-image-wrapper reveal" style="transition-delay:.15s">
+      <div class="hero-image-frame tilt-card" id="heroTilt">
+        <img src="portrait.png" alt="Slav Chervenpeev" />
+      </div>
+      <div class="corner-accent tl"></div>
+      <div class="corner-accent tr"></div>
+      <div class="corner-accent bl"></div>
+      <div class="corner-accent br"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Stats Strip ═══ -->
+<div class="stats-strip reveal">
+  <div class="stat-item">
+    <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+    <span class="stat-label">Certificates</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+    <span class="stat-label">Work Roles</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+    <span class="stat-label">Tech Skills</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num" data-target="2">0</span>
+    <span class="stat-label">Languages</span>
+  </div>
+</div>
+
+<!-- ═══ Experience ═══ -->
+<section id="experience">
+  <p class="section-label reveal">// where I've worked</p>
+  <h2 class="section-title reveal">
+    <span class="filled">Work</span> <span class="outline">Experience</span>
+  </h2>
+  <div class="experience-timeline">
+    <div class="exp-item spotlight-card reveal" style="transition-delay:.1s">
+      <div class="exp-header">
+        <div>
+          <span class="exp-role">Software Engineering Intern</span>
+          <span class="exp-company">TriSoft — Internship</span>
+        </div>
+        <span class="exp-tag">Infrastructure</span>
+      </div>
+      <p class="exp-desc">
+        Collaborated within a team of six developers on the implementation of a multi-agent AI system using OpenClaw. The system consisted of multiple specialized AI agents coordinated by an orchestrator agent and deployed on a Mini PC running Linux. My role focused on the infrastructure side — Linux installation, OpenClaw deployment and configuration, environment setup, and ensuring the platform was ready for agent integration and testing.
+      </p>
+      <div class="exp-techs">
+        <span>Linux</span><span>OpenClaw</span><span>AI Agents</span><span>DevOps</span>
+      </div>
+    </div>
+    <div class="exp-item spotlight-card reveal" style="transition-delay:.2s">
+      <div class="exp-header">
+        <div>
+          <span class="exp-role">Moderator</span>
+          <span class="exp-company">SoftUni University</span>
+        </div>
+        <span class="exp-tag">Education</span>
+      </div>
+      <p class="exp-desc">
+        Worked at the famous online university SoftUni as a moderator. Communicated with students via messages and chat during live-broadcasted online lectures. Responsible for personally answering questions, redirecting them based on category, and grading students' final exams.
+      </p>
+      <div class="exp-techs">
+        <span>Live Support</span><span>QA Grading</span><span>Communication</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Tech Stack ═══ -->
+<section id="stack">
+  <p class="section-label reveal">// what I build with</p>
+  <h2 class="section-title reveal">
+    <span class="filled">Tech</span> <span class="outline">Stack</span>
+  </h2>
+  <div class="stack-grid reveal" style="transition-delay:.1s">
+    <div class="stack-category">
+      <span class="stack-cat-name">Languages</span>
+      <div class="stack-badges">
+        <span class="stack-badge">C#</span>
+        <span class="stack-badge">Java</span>
+        <span class="stack-badge">JavaScript</span>
+      </div>
+    </div>
+    <div class="stack-category">
+      <span class="stack-cat-name">Web</span>
+      <div class="stack-badges">
+        <span class="stack-badge">HTML</span>
+        <span class="stack-badge">CSS</span>
+      </div>
+    </div>
+    <div class="stack-category">
+      <span class="stack-cat-name">Database</span>
+      <div class="stack-badges">
+        <span class="stack-badge">MySQL</span>
+      </div>
+    </div>
+    <div class="stack-category">
+      <span class="stack-cat-name">Tools</span>
+      <div class="stack-badges">
+        <span class="stack-badge">Adobe Photoshop</span>
+        <span class="stack-badge">Drupal</span>
+        <span class="stack-badge">Claude AI</span>
+        <span class="stack-badge">Microsoft Office</span>
+      </div>
+    </div>
+    <div class="stack-category">
+      <span class="stack-cat-name">DevOps</span>
+      <div class="stack-badges">
+        <span class="stack-badge">Linux</span>
+        <span class="stack-badge">OpenClaw</span>
+      </div>
+    </div>
+  </div>
+  <div class="ticker-wrapper reveal">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="dot"></span> C#</span>
+      <span class="ticker-item"><span class="dot"></span> Java</span>
+      <span class="ticker-item"><span class="dot"></span> JavaScript</span>
+      <span class="ticker-item"><span class="dot"></span> HTML & CSS</span>
+      <span class="ticker-item"><span class="dot"></span> MySQL</span>
+      <span class="ticker-item"><span class="dot"></span> Adobe Photoshop</span>
+      <span class="ticker-item"><span class="dot"></span> Drupal</span>
+      <span class="ticker-item"><span class="dot"></span> Linux</span>
+      <span class="ticker-item"><span class="dot"></span> OpenClaw</span>
+      <span class="ticker-item"><span class="dot"></span> Claude AI</span>
+      <span class="ticker-item"><span class="dot"></span> C#</span>
+      <span class="ticker-item"><span class="dot"></span> Java</span>
+      <span class="ticker-item"><span class="dot"></span> JavaScript</span>
+      <span class="ticker-item"><span class="dot"></span> HTML & CSS</span>
+      <span class="ticker-item"><span class="dot"></span> MySQL</span>
+      <span class="ticker-item"><span class="dot"></span> Adobe Photoshop</span>
+      <span class="ticker-item"><span class="dot"></span> Drupal</span>
+      <span class="ticker-item"><span class="dot"></span> Linux</span>
+      <span class="ticker-item"><span class="dot"></span> OpenClaw</span>
+      <span class="ticker-item"><span class="dot"></span> Claude AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Qualities ═══ -->
+<section id="qualities">
+  <p class="section-label reveal">// who I am</p>
+  <h2 class="section-title reveal">
+    <span class="filled">Core</span> <span class="outline">Qualities</span>
+  </h2>
+  <div class="qualities-grid">
+    <div class="quality-card spotlight-card reveal" style="transition-delay:.05s">
+      <div class="quality-num">01</div>
+      <h3 class="quality-title">Fast Learner</h3>
+      <p class="quality-desc">Quick to absorb new technologies. Adaptability is my superpower — I thrive in fast-paced, ever-evolving environments.</p>
+    </div>
+    <div class="quality-card spotlight-card reveal" style="transition-delay:.1s">
+      <div class="quality-num">02</div>
+      <h3 class="quality-title">Team Player</h3>
+      <p class="quality-desc">Proven track record of collaborating in teams of developers, communicators, and educators. Best results come from diverse perspectives.</p>
+    </div>
+    <div class="quality-card spotlight-card reveal" style="transition-delay:.15s">
+      <div class="quality-num">03</div>
+      <h3 class="quality-title">Goal-Oriented</h3>
+      <p class="quality-desc">Highly motivated and progress-focused. I set clear objectives and work systematically to achieve them, delivering on time.</p>
+    </div>
+    <div class="quality-card spotlight-card reveal" style="transition-delay:.2s">
+      <div class="quality-num">04</div>
+      <h3 class="quality-title">Communicator</h3>
+      <p class="quality-desc">Strong public relations and effective communication skills honed through working directly with students and live audiences.</p>
+    </div>
+    <div class="quality-card spotlight-card reveal" style="transition-delay:.25s">
+      <div class="quality-num">05</div>
+      <h3 class="quality-title">Natural Leader</h3>
+      <p class="quality-desc">Comfortable taking the lead on projects and guiding teams toward shared goals. Leadership comes naturally through experience.</p>
+    </div>
+    <div class="quality-card spotlight-card reveal" style="transition-delay:.3s">
+      <div class="quality-num">06</div>
+      <h3 class="quality-title">Bilingual</h3>
+      <p class="quality-desc">Fluent in both Bulgarian (native) and English — comprehension, speaking, and writing. Ready for international collaboration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Strengths ═══ -->
+<section id="strengths">
+  <p class="section-label reveal">// how I work</p>
+  <h2 class="section-title reveal">
+    <span class="filled">Key</span> <span class="outline">Strengths</span>
+  </h2>
+  <div class="strengths-grid reveal" style="transition-delay:.1s">
+    <div class="strength-card spotlight-card"><div class="strength-icon">🧩</div><span class="strength-name">Problem-solving</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">📐</div><span class="strength-name">Project Management</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">💻</div><span class="strength-name">Software Development</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">⏱️</div><span class="strength-name">Time Management</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">🔍</div><span class="strength-name">Attention to Detail</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">👥</div><span class="strength-name">Team Coordination</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">📚</div><span class="strength-name">Continuous Learning</span></div>
+    <div class="strength-card spotlight-card"><div class="strength-icon">💡</div><span class="strength-name">Adaptability</span></div>
+  </div>
+</section>
+
+<!-- ═══ Education ═══ -->
+<section id="education">
+  <p class="section-label reveal">// where I studied</p>
+  <h2 class="section-title reveal">
+    <span class="filled">Education</span> <span class="outline">& Certificates</span>
+  </h2>
+  <div class="education-cards">
+    <div class="edu-card spotlight-card edu-featured reveal" style="transition-delay:.05s">
+      <span class="edu-period">2022 — Present</span>
+      <h3 class="edu-school">Plovdiv University "Paisii Hilendarski"</h3>
+      <p class="edu-detail">Bachelor of Informatics</p>
+      <span class="edu-badge-active">In Progress</span>
+    </div>
+    <div class="edu-card spotlight-card reveal" style="transition-delay:.1s">
+      <span class="edu-period">2017 — 2022</span>
+      <h3 class="edu-school">PMG "Dobri Chintulov"</h3>
+      <p class="edu-detail">Profiled High School of Mathematics and Natural Science</p>
+      <span class="edu-grade">Diploma: 6.00</span>
+    </div>
+    <div class="edu-card spotlight-card reveal" style="transition-delay:.15s">
+      <span class="edu-period">SoftUni Certificate</span>
+      <h3 class="edu-school">QA Basics</h3>
+      <p class="edu-detail">Quality Assurance Fundamentals</p>
+      <span class="edu-grade">Grade: 6.00</span>
+    </div>
+    <div class="edu-card spotlight-card reveal" style="transition-delay:.2s">
+      <span class="edu-period">SoftUni Certificate</span>
+      <h3 class="edu-school">QA Fundamentals & Manual Testing</h3>
+      <p class="edu-detail">Advanced QA and Manual Testing Techniques</p>
+      <span class="edu-grade">Grade: 6.00</span>
+    </div>
+    <div class="edu-card spotlight-card reveal" style="transition-delay:.25s">
+      <span class="edu-period">SoftUni Certificate</span>
+      <h3 class="edu-school">Software Technologies</h3>
+      <p class="edu-detail">Core Software Technologies Overview</p>
+      <span class="edu-grade">Grade: 6.00</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section" id="cv">
+  <p class="section-label reveal">// let's connect</p>
+  <h2 class="section-title reveal" style="text-align:center">
+    <span class="filled">Ready to</span> <span class="outline">Dive Deeper?</span>
+  </h2>
+  <div class="cta-box reveal" style="transition-delay:.1s">
+    <div class="corner-accent tl"></div>
+    <div class="corner-accent tr"></div>
+    <div class="corner-accent bl"></div>
+    <div class="corner-accent br"></div>
+    <p class="cta-text">
+      My CV lays out the detail behind the headlines — experience, education, and the skills I bring to every team. Take a look, then let's build something great together.
+    </p>
+    <div class="cta-buttons">
+      <a href="_CVV.pdf" download class="btn-primary">
+        <span>Download CV</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </a>
+      <a href="mailto:slav.chervenpeev@abv.bg" class="btn-secondary">Email Me Directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer class="footer">
+  <div class="footer-cta reveal">
+    <p class="footer-cta-label">// let's work together</p>
+    <a href="mailto:slav.chervenpeev@abv.bg" class="footer-email">slav.chervenpeev@abv.bg</a>
+  </div>
+  <div class="footer-bottom">
+    <a href="#home" class="footer-logo">&lt;SC/&gt;</a>
+    <span class="footer-copy">© 2026 Slav Chervenpeev. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="#home">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#qualities">Qualities</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// ── Particles ──
+(function(){
+  const c=document.getElementById('particles-canvas'),x=c.getContext('2d');
+  let p=[];const N=45,cols=[[91,138,245],[124,91,245],[74,222,128]];
+  function rs(){c.width=innerWidth;c.height=innerHeight}
+  rs();addEventListener('resize',rs);
+  class P{constructor(){this.r()}
+    r(){this.x=Math.random()*c.width;this.y=Math.random()*c.height;
+      this.vx=(Math.random()-.5)*.22;this.vy=(Math.random()-.5)*.22;
+      this.rad=Math.random()*1.6+.5;this.o=Math.random()*.35+.1;
+      this.c=cols[Math.floor(Math.random()*cols.length)]}
+    u(){this.x+=this.vx;this.y+=this.vy;
+      if(this.x<0||this.x>c.width)this.vx*=-1;
+      if(this.y<0||this.y>c.height)this.vy*=-1}
+    d(){x.beginPath();x.arc(this.x,this.y,this.rad,0,Math.PI*2);
+      x.fillStyle=`rgba(${this.c[0]},${this.c[1]},${this.c[2]},${this.o})`;x.fill()}}
+  for(let i=0;i<N;i++)p.push(new P);
+  function lines(){for(let i=0;i<p.length;i++)for(let j=i+1;j<p.length;j++){
+    const dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<130){const a=.04*(1-d/130),cl=p[i].c;
+      x.beginPath();x.moveTo(p[i].x,p[i].y);x.lineTo(p[j].x,p[j].y);
+      x.strokeStyle=`rgba(${cl[0]},${cl[1]},${cl[2]},${a})`;x.lineWidth=.5;x.stroke()}}}
+  function run(){x.clearRect(0,0,c.width,c.height);p.forEach(i=>{i.u();i.d()});lines();requestAnimationFrame(run)}
+  run()
+})();
+
+// ── Typing Effect ──
+(function(){
+  const roles=['Software Developer','QA Engineer','Team Collaborator','Fast Learner','Infrastructure Engineer'];
+  let ri=0,ci=0,del=false;const el=document.getElementById('typedRole');
+  function type(){
+    const word=roles[ri];
+    if(!del){ci++;if(ci>word.length){setTimeout(()=>{del=true;type()},1800);return}}
+    else{ci--;if(ci<0){ci=0;del=false;ri=(ri+1)%roles.length;setTimeout(()=>type(),400);return}}
+    el.textContent=word.substring(0,ci);setTimeout(type,del?40:80)
+  }
+  type()
+})();
+
+// ── Scroll Progress ──
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-innerHeight;
+  document.getElementById('scrollProgress').style.width=(scrollY/h*100)+'%';
+});
+
+// ── Mouse Glow + Spotlight Cards ──
+document.addEventListener('mousemove',e=>{
+  // Global glow
+  const g=document.getElementById('mouseGlow');
+  g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';
+
+  // Spotlight effect on cards
+  document.querySelectorAll('.spotlight-card').forEach(card=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mouse-x',(e.clientX-r.left)+'px');
+    card.style.setProperty('--mouse-y',(e.clientY-r.top)+'px');
+  });
+});
+
+// ── 3D Tilt on Hero Portrait ──
+(function(){
+  const el=document.getElementById('heroTilt');
+  if(!el)return;
+  const wrap=el.closest('.hero-image-wrapper');
+  wrap.addEventListener('mousemove',e=>{
+    const r=wrap.getBoundingClientRect();
+    const cx=r.left+r.width/2, cy=r.top+r.height/2;
+    const dx=(e.clientX-cx)/(r.width/2), dy=(e.clientY-cy)/(r.height/2);
+    el.style.transform=`perspective(800px) rotateY(${dx*8}deg) rotateX(${-dy*8}deg) scale(1.02)`;
+  });
+  wrap.addEventListener('mouseleave',()=>{
+    el.style.transform='perspective(800px) rotateY(0) rotateX(0) scale(1)';
+  });
+})();
+
+// ── Magnetic Buttons ──
+document.querySelectorAll('.magnetic-btn').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    const dx=e.clientX-(r.left+r.width/2);
+    const dy=e.clientY-(r.top+r.height/2);
+    btn.style.transform=`translate(${dx*.25}px,${dy*.25}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>{
+    btn.style.transform='translate(0,0)';
+  });
+});
+
+// ── Parallax Orbs on Scroll ──
+window.addEventListener('scroll',()=>{
+  const y=scrollY;
+  document.querySelector('.orb-1').style.transform=`translate(${Math.sin(y*.002)*20}px,${y*-.05}px) scale(1)`;
+  document.querySelector('.orb-2').style.transform=`translate(${Math.cos(y*.002)*15}px,${y*.04}px) scale(1)`;
+  document.querySelector('.orb-3').style.transform=`translate(${Math.sin(y*.003)*10}px,${y*-.03}px) scale(1)`;
+});
+
+// ── Scroll Reveal ──
+const obs=new IntersectionObserver(e=>{
+  e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── Counter Animation ──
+const cObs=new IntersectionObserver(e=>{
+  e.forEach(en=>{if(en.isIntersecting){
+    en.target.querySelectorAll('.stat-num').forEach(n=>{
+      const t=+n.dataset.target;let c=0;
+      const iv=setInterval(()=>{c++;n.textContent=c;if(c>=t)clearInterval(iv)},120)
+    });cObs.unobserve(en.target)}})
+},{threshold:.5});
+const ss=document.querySelector('.stats-strip');if(ss)cObs.observe(ss);
+
+// ── Active Nav ──
+const secs=document.querySelectorAll('section');
+const nls=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-100)cur=s.id});
+  nls.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active')});
+  const nav=document.getElementById('navbar');
+  nav.style.padding=scrollY>50?'.6rem 3rem':'1rem 3rem';
+});
+nls.forEach(l=>l.addEventListener('click',()=>document.getElementById('nav-links').classList.remove('open')));
+</script>
+</body>
+</html>
