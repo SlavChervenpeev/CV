@@ -371,25 +371,56 @@
 // ── Particles ──
 (function(){
   const c=document.getElementById('particles-canvas'),x=c.getContext('2d');
-  let p=[];const N=45,cols=[[91,138,245],[124,91,245],[74,222,128]];
+  let p=[];const N=180,cols=[[91,138,245],[124,91,245],[74,222,128]];
+  let mx=null,my=null;
+  
   function rs(){c.width=innerWidth;c.height=innerHeight}
   rs();addEventListener('resize',rs);
+  
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  document.addEventListener('mouseleave',()=>{mx=null;my=null});
+  
   class P{constructor(){this.r()}
     r(){this.x=Math.random()*c.width;this.y=Math.random()*c.height;
-      this.vx=(Math.random()-.5)*.22;this.vy=(Math.random()-.5)*.22;
-      this.rad=Math.random()*1.6+.5;this.o=Math.random()*.35+.1;
+      this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;
+      this.rad=Math.random()*1.5+1.0;
+      this.o=Math.random()*.5+.5;
       this.c=cols[Math.floor(Math.random()*cols.length)]}
-    u(){this.x+=this.vx;this.y+=this.vy;
+    u(){
+      if(mx!=null && my!=null){
+        let dx=this.x-mx, dy=this.y-my, dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){
+          let f=(120-dist)/120;
+          this.x+=dx/dist * f * 2.5;
+          this.y+=dy/dist * f * 2.5;
+        }
+      }
+      this.x+=this.vx;this.y+=this.vy;
       if(this.x<0||this.x>c.width)this.vx*=-1;
       if(this.y<0||this.y>c.height)this.vy*=-1}
     d(){x.beginPath();x.arc(this.x,this.y,this.rad,0,Math.PI*2);
       x.fillStyle=`rgba(${this.c[0]},${this.c[1]},${this.c[2]},${this.o})`;x.fill()}}
+      
   for(let i=0;i<N;i++)p.push(new P);
-  function lines(){for(let i=0;i<p.length;i++)for(let j=i+1;j<p.length;j++){
-    const dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);
-    if(d<130){const a=.04*(1-d/130),cl=p[i].c;
-      x.beginPath();x.moveTo(p[i].x,p[i].y);x.lineTo(p[j].x,p[j].y);
-      x.strokeStyle=`rgba(${cl[0]},${cl[1]},${cl[2]},${a})`;x.lineWidth=.5;x.stroke()}}}
+  
+  function lines(){
+    for(let i=0;i<p.length;i++){
+      if(mx!=null && my!=null){
+        let dx=p[i].x-mx, dy=p[i].y-my, d=Math.sqrt(dx*dx+dy*dy);
+        if(d<120){
+          x.beginPath();x.moveTo(p[i].x,p[i].y);x.lineTo(mx,my);
+          x.strokeStyle=`rgba(${p[i].c[0]},${p[i].c[1]},${p[i].c[2]},${.4*(1-d/120)})`;
+          x.lineWidth=1;x.stroke();
+        }
+      }
+      for(let j=i+1;j<p.length;j++){
+        const dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<85){const a=.15*(1-d/85),cl=p[i].c;
+          x.beginPath();x.moveTo(p[i].x,p[i].y);x.lineTo(p[j].x,p[j].y);
+          x.strokeStyle=`rgba(${cl[0]},${cl[1]},${cl[2]},${a})`;x.lineWidth=.6;x.stroke()}
+      }
+    }
+  }
   function run(){x.clearRect(0,0,c.width,c.height);p.forEach(i=>{i.u();i.d()});lines();requestAnimationFrame(run)}
   run()
 })();
